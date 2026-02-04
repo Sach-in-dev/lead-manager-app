@@ -64,8 +64,6 @@ app.*.map.json
 /ios/Flutter/app.zip
 /ios/ServiceDefinitions.json
 /ios/Runner/GeneratedPluginRegistrant.*
-/ios/Runner/Base.lproj/
-/ios/Runner/Assets.xcassets/AppIcon.appiconset/
 /ios/Runner/App.framework
 /ios/Runner/Flutter.framework
 
