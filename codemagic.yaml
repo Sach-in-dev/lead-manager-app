@@ -14,16 +14,9 @@ workflows:
         script: |
           cd ios
           pod install
-      - name: Build iOS IPA (Debug - Unsigned)
+      - name: Build iOS IPA (Release - Unsigned)
         script: |
-          flutter build ios --debug --no-codesign
-          cd ios
-          xcodebuild -workspace Runner.xcworkspace \
-            -scheme Runner \
-            -configuration Debug \
-            -archivePath build/Runner.xcarchive \
-            archive \
-            CODE_SIGNING_ALLOWED=NO
+          flutter build ipa --release --no-codesign
     artifacts:
       - build/ios/ipa/*.ipa
       - ios/build/Runner.xcarchive
