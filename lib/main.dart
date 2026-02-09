@@ -25,7 +25,7 @@ class LeadManagementApp extends StatelessWidget {
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,
             themeMode: provider.isDarkMode ? ThemeMode.dark : ThemeMode.light,
-            home: const WelcomeScreen(),
+            home: const HomeScreen(), // TEMP: Skip WelcomeScreen to test iOS
             debugShowCheckedModeBanner: false,
           );
         },
