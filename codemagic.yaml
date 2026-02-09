@@ -16,10 +16,14 @@ workflows:
           pod install
       - name: Build iOS IPA (Release - Unsigned)
         script: |
-          flutter build ipa --release --no-codesign
+          flutter build ios --release --no-codesign
+          cd build/ios/iphoneos
+          mkdir Payload
+          cp -r Runner.app Payload
+          zip -r LeadManager.ipa Payload
     artifacts:
-      - build/ios/ipa/*.ipa
-      - ios/build/Runner.xcarchive
+      - build/ios/iphoneos/LeadManager.ipa
+      - /tmp/xcodebuild_logs/*.log
       - /tmp/xcodebuild_logs/*.log
       - flutter_drive.log
     publishing:
